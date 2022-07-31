@@ -3,20 +3,11 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyNames);
-console.log(enemyNames.length);
-console.log(enemyNames[0]);
-console.log(enemyNames[3]);
-
-
-// fight function
+// fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
 	while(enemyHealth > 0 && enemyHealth > 0) {
 		// ask player if they'd like to fight or run	
@@ -29,11 +20,11 @@ var fight = function(enemyName) {
 			
 			// if yes (true), leave fight
 			if (confirmSkip) {
-			window.alert(playerName + " has decided to skip this fight. Goodbye!");
-			// subtract money from playerMoney for skipping
-			playerMoney = playerMoney - 10;
-			console.log("playerMoney", playerMoney);
-			break;
+				window.alert(playerName + " has decided to skip this fight. Goodbye!");
+				// subtract money from playerMoney for skipping
+				playerMoney = playerMoney - 10;
+				console.log("playerMoney", playerMoney);
+				break;
 			}
 		}
 		
@@ -109,8 +100,7 @@ var startGame = function() {
 				//if yes, take them to the store() function 
 				if (storeConfirm) {
 					shop();
-				}
-				
+				}			
 			}
 		} 
 		// if player isn't alive, stop the game
@@ -118,11 +108,11 @@ var startGame = function() {
 			window.alert("You have lost your robot in battle! Game Over!");
 			break;
 		}
-	}
+	} // end main for loop
 	
 	// play again
 	endGame();
-}
+}; // end startGame function
 
 // function to end the entire game
 var endGame = function() {
@@ -143,7 +133,7 @@ var endGame = function() {
 	} else {
 		window.alert("Thank you for playing Robot Gladiators! Come back soon!");
 	}
-}
+};
 
 // function to add a shopping to the game
 var shop = function() {
@@ -194,24 +184,10 @@ var shop = function() {
 			// call shop() again to force player to pick a valid option
 			shop();
 			break;
-		} // end of switch statement
-} // end of shop function	
+	} // end of switch statement
+}; // end of shop function	
 
 // start the game when the page loads
 startGame();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
