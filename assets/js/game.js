@@ -32,19 +32,19 @@ var fight = function(enemy) {
 			
 			enemy.health = Math.max(0, enemy.health - damage);
 			console.log(
-				playerInfo.name + " attacked " + enemy.Name + ". " + enemy.Name + " now has " + enemy.health + " health remaining."
+				playerInfo.name + " attacked " + enemy.name + ". " + enemy.name + " now has " + enemy.health + " health remaining."
 			);
 		
 			// check enemy's health
 		if (enemy.health <= 0) {
-				window.alert(enemy.Name + " has died!");
+				window.alert(enemy.name + " has died!");
 			
 			// aware player money for winning
 			playerInfo.money = Math.max(0, playerInfo.money + 10);
 			// leave while() loop since enemy is dead
 			break;
 		} else {
-			window.alert(enemy.Name + ' still has ' + enemy.health + ' health left.');
+			window.alert(enemy.name + ' still has ' + enemy.health + ' health left.');
 		}
 			
 		// generate random damage value based on player's attack power
@@ -52,7 +52,7 @@ var fight = function(enemy) {
 		
 		playerInfo.health = Math.max(0, playerInfo.health - damage);
 		console.log(
-			enemy.Name + " attacked " + playerInfo.name + ". " + playerInfo.name + " now has " + playerInfo.health + " health remaining."
+			enemy.name + " attacked " + playerInfo.name + ". " + playerInfo.name + " now has " + playerInfo.health + " health remaining."
 		);
 	
 		// check player's health
@@ -115,6 +115,8 @@ var startGame = function() {
 
 // function to end the entire game
 var endGame = function() {
+	window.alert("The game has now ended. Let's see how you did!");
+	
 	// if player is still alive, player wins!
 	if (playerInfo.health > 0) {
 		window.alert("Great job, you've survived the game! You now have a score of " + playerInfo.money + ".")
@@ -166,6 +168,8 @@ var shop = function() {
 	} // end of switch statement
 }; // end of shop function	
 
+
+// player information
 var playerInfo = {
 	name: window.prompt("What is your robot's name?"),
 	health: 100,
@@ -198,6 +202,7 @@ var playerInfo = {
 	}
 };
 
+// enemy information
 var enemyInfo = [
 	{ name: "Roborto",
 		attack: randomNumber(10, 14)
@@ -209,6 +214,14 @@ var enemyInfo = [
 		attack: randomNumber(10, 14)
 	}
 ];
+
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
+/* provide variable information at the end of the game */
+
 
 // start the game when the page loads
 startGame();
