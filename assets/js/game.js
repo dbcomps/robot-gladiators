@@ -168,7 +168,6 @@ var shop = function() {
 	} // end of switch statement
 }; // end of shop function	
 
-
 // function to set name
 var getPlayerName = function() {
 	var name = "";
@@ -179,7 +178,6 @@ console.log("Your robot's name is " + name);
 	return name;
 
 };
-
 
 /* GAME INFORMATION / VARIABLES */
 var playerInfo = {
